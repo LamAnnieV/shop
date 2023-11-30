@@ -1,4 +1,4 @@
-FROM python:2.7-slim
+FROM python:3.10.13-slim
 RUN apt-get update -qqy && \
 	apt-get -qqy install wget g++ && \
 	rm -rf /var/lib/apt/lists/*
@@ -20,6 +20,6 @@ COPY . .
 
 # set listen port
 ENV PORT "8080"
-EXPOSE 8080
+EXPOSE 8084
 
 ENTRYPOINT ["python", "/recommendationservice/recommendation_server.py"]
